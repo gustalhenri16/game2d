@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/CenaFinal.gd" type="Script" id=1]
+[ext_resource path="res://Background/ParallaxbackDesert.tscn" type="PackedScene" id=2]
+[ext_resource path="res://PlayerTl2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/PlayerTl2.gd" type="Script" id=4]
+[ext_resource path="res://TitleMap/TileDesert.tres" type="TileSet" id=5]
+[ext_resource path="res://Plataforma Móveis/Plataforma_desert.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Passagem.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Inimigos/inimigotest.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Inimigos/Chefao.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Inimigos/Chefao.gd" type="Script" id=10]
+
+[sub_resource type="Animation" id=1]
+resource_name = "paltDesert"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3397.4, 537.776 ), Vector2( 3397.4, 217.776 ), Vector2( 3397.4, 537.776 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4217.72, 48.8695 )
+
+[node name="CenaFinal" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Foxy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 176.38, 174.991 )
+script = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -1048580, 3, 0, -786436, 3, 0, -524292, 3, 0, -262148, 3, 0, -4, 3, 0, 0, 1310716, 0, 262140, 3, 0, 327794, 536870914, 0, 327798, 1, 0, 327802, 536870912, 0, 524284, 3, 0, 458752, 1, 0, 458756, 1, 0, 458760, 1, 0, 458764, 536870912, 0, 589938, 3, 0, 589942, 4, 0, 589946, 9, 0, 589950, 536870912, 0, 786428, 3, 0, 720896, 4, 0, 720900, 4, 0, 720904, 4, 0, 720908, 9, 0, 720912, 10, 0, 720916, 536870912, 0, 852082, 3, 0, 852086, 4, 0, 852090, 4, 0, 852094, 9, 0, 852098, 536870912, 0, 1048572, 3, 0, 983040, 4, 0, 983044, 4, 0, 983048, 4, 0, 983052, 536870916, 0, 983056, 536870916, 0, 983060, 9, 0, 983064, 536870912, 0, 1114193, 0, 0, 1114197, 1, 0, 1114201, 1, 0, 1114205, 1, 0, 1114209, 2, 0, 1114226, 3, 0, 1114230, 4, 0, 1114234, 4, 0, 1114238, 4, 0, 1114242, 9, 0, 1114246, 536870912, 0, 1310716, 3, 0, 1245184, 4, 0, 1245188, 4, 0, 1245192, 4, 0, 1245196, 536870916, 0, 1245200, 536870916, 0, 1245204, 536870916, 0, 1245208, 5, 0, 1376287, 13, 0, 1376291, 14, 0, 1376295, 14, 0, 1376299, 14, 0, 1376303, 14, 0, 1376307, 14, 0, 1376311, 14, 0, 1376315, 14, 0, 1376319, 14, 0, 1376323, 14, 0, 1376327, 14, 0, 1376332, 536870925, 0, 1376337, 536870917, 0, 1376341, 4, 0, 1376345, 4, 0, 1376349, 4, 0, 1376353, 5, 0, 1376370, 3, 0, 1376374, 4, 0, 1376378, 4, 0, 1376382, 4, 0, 1376386, 4, 0, 1376390, 9, 0, 1376394, 536870912, 0, 1376403, 536870914, 0, 1376407, 536870913, 0, 1376411, 536870913, 0, 1376415, 536870913, 0, 1376419, 536870913, 0, 1376423, 536870913, 0, 1376427, 536870913, 0, 1376431, 536870913, 0, 1376435, 536870913, 0, 1376439, 1, 0, 1376443, 1, 0, 1376447, 1, 0, 1376451, 1, 0, 1376455, 1, 0, 1376459, 2, 0, 1572860, 536870924, 0, 1507328, 8, 0, 1507332, 8, 0, 1507336, 8, 0, 1507340, 8, 0, 1507344, 8, 0, 1507348, 8, 0, 1507352, 12, 0, 1638481, 536870924, 0, 1638485, 8, 0, 1638489, 8, 0, 1638493, 8, 0, 1638497, 12, 0, 1638514, 11, 0, 1638518, 536870920, 0, 1638522, 536870920, 0, 1638526, 536870920, 0, 1638530, 536870920, 0, 1638534, 536870920, 0, 1638538, 12, 0, 1638547, 11, 0, 1638551, 536870920, 0, 1638555, 536870920, 0, 1638559, 536870920, 0, 1638563, 536870920, 0, 1638567, 536870920, 0, 1638571, 536870920, 0, 1638575, 536870920, 0, 1638579, 536870920, 0, 1638583, 8, 0, 1638587, 8, 0, 1638591, 8, 0, 1638595, 8, 0, 1638599, 8, 0, 1638603, 12, 0 )
+
+[node name="plataforma_desert" parent="." instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 3397.4, 537.776 )
+z_index = -1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma_desert"]
+autoplay = "paltDesert"
+playback_speed = 0.3
+anims/paltDesert = SubResource( 1 )
+
+[node name="Passagem" parent="." instance=ExtResource( 7 )]
+position = Vector2( 69.0477, 127.617 )
+
+[node name="Passagem2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6540.47, 577.221 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1426.35, 616.175 )
+collision_layer = 4
+life = 7
+
+[node name="KinematicBody2D4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3867.17, 106.021 )
+collision_layer = 4
+life = 7
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2946.09, 488.606 )
+collision_layer = 4
+life = 7
+
+[node name="KinematicBody2D3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1877.83, 619.07 )
+collision_layer = 4
+life = 7
+
+[node name="chefao" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5903.62, 585.323 )
+scale = Vector2( 0.3, 0.3 )
+collision_layer = 4
+script = ExtResource( 10 )
+life = 20
+
+[node name="MorteF" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MorteF"]
+position = Vector2( 3493.11, 1042.93 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Passagem2" to="." method="_on_Passagem2_body_entered"]
+[connection signal="body_entered" from="MorteF" to="." method="_on_MorteF_body_entered"]

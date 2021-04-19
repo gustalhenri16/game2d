@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets Maps/Neveset/png/Tiles/16.png" type="Texture" id=1]
+
+
+
+[node name="plataforma_gelo" type="KinematicBody2D"]
+position = Vector2( 0, 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 27.7641 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 46.4272, 22.8576 )
+scale = Vector2( 0.991261, 0.991261 )
+texture = ExtResource( 1 )
+centered = false
+region_rect = Rect2( 0, 0, 128, 96 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 27.2498, 35.8989 )
+polygon = PoolVector2Array( 19.2127, -13.0954, 137.414, -13.0824, 143.256, -8.89666, 146.603, -2.09909, 146.561, 9.09991, 146.507, 18.4298, 145.558, 38.1703, 141.412, 38.5183, 135.68, 33.4845, 126.942, 37.7903, 117.712, 40.3414, 101.47, 42.1645, 87.8087, 58.6866, 77.6048, 65.6987, 64.0146, 72.8252, 49.43, 77.4658, 35.468, 79.0618, 19.1809, 78.9934 )

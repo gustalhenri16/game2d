@@ -1,0 +1,193 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scripts/World.gd" type="Script" id=1]
+[ext_resource path="res://Background/ParallaxBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TitleMap/TitleNeve3.tres" type="TileSet" id=4]
+[ext_resource path="res://Assets Maps/Neveset/png/Tiles/4.png" type="Texture" id=5]
+[ext_resource path="res://Inimigos/inimigotest.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Passagem.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Plataforma Móveis/plataforma_gelo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Plataforma Móveis/MiniPlataforma.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Plataforma Móveis/platf_gelo2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets Maps/Neveset/png/Object/Sign_2.png" type="Texture" id=11]
+[ext_resource path="res://Assets Maps/Neveset/png/Object/Tree_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets Maps/Neveset/png/Tiles/14.png" type="Texture" id=13]
+[ext_resource path="res://Assets Maps/Neveset/png/Object/Tree_1.png" type="Texture" id=14]
+[ext_resource path="res://morte.tscn" type="PackedScene" id=15]
+
+[sub_resource type="Animation" id=1]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00642548, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3100.96, 264.173 ), Vector2( 3500.96, 264.173 ), Vector2( 3103.52, 264.173 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("plataforma_gelo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4368.02, 202.286 ), Vector2( 4368.02, 712.286 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5997.75, 741.344 ), Vector2( 5997.75, -98.6564 ), Vector2( 5997.75, 741.344 ) ]
+}
+
+[node name="World" type="Node"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 30.8008, 235.368 )
+collision/safe_margin = 0.1
+
+[node name="TileMap" type="TileMap" parent="."]
+editor/display_folded = true
+position = Vector2( -1, 1 )
+z_index = -1
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -131076, 3, 0, 131068, 3, 0, 393212, 3, 0, 458870, 13, 0, 458874, 14, 0, 458878, 14, 0, 458882, 14, 0, 458886, 14, 0, 655356, 3, 0, 589824, 0, 0, 589828, 1, 0, 589832, 1, 0, 589836, 536870912, 0, 720924, 15, 0, 720928, 14, 0, 720932, 14, 0, 720937, 536870925, 0, 720967, 13, 0, 720971, 14, 0, 720975, 14, 0, 720979, 14, 0, 720983, 14, 0, 720988, 536870925, 0, 917500, 3, 0, 851968, 536870917, 0, 851972, 536870916, 0, 851976, 4, 0, 851980, 9, 0, 851984, 10, 0, 851988, 2, 0, 917567, 0, 0, 983102, 0, 0, 1179644, 3, 0, 1114112, 536870924, 0, 1114116, 536870920, 0, 1114120, 536870920, 0, 1114124, 536870920, 0, 1114128, 536870920, 0, 1114132, 536870923, 0, 1114156, 536870913, 0, 1114160, 536870913, 0, 1114164, 536870913, 0, 1114168, 536870913, 0, 1114172, 536870913, 0, 1114176, 536870912, 0, 1179670, 16, 0, 1179674, 16, 0, 1179678, 16, 0, 1179682, 16, 0, 1179686, 16, 0, 1179690, 16, 0, 1179693, 16, 0, 1179695, 16, 0, 1441788, 536870917, 0, 1376256, 17, 0, 1376257, 536870929, 0, 1376258, 536870929, 0, 1376259, 536870929, 0, 1376260, 536870929, 0, 1376261, 536870929, 0, 1376262, 536870929, 0, 1376263, 536870929, 0, 1376264, 536870929, 0, 1376265, 536870929, 0, 1376266, 536870929, 0, 1376267, 536870929, 0, 1376268, 536870929, 0, 1376269, 536870929, 0, 1376270, 536870929, 0, 1376271, 536870929, 0, 1376272, 536870929, 0, 1376273, 536870929, 0, 1376274, 536870929, 0, 1376275, 536870929, 0, 1376276, 536870929, 0, 1376277, 536870929, 0, 1376281, 17, 0, 1376285, 17, 0, 1376289, 17, 0, 1376293, 17, 0, 1376295, 17, 0, 1376299, 536870929, 0, 1376300, 536870929, 0, 1376301, 536870929, 0, 1376302, 536870929, 0, 1376303, 536870929, 0, 1376304, 536870929, 0, 1376305, 536870929, 0, 1376306, 536870929, 0, 1376307, 536870929, 0, 1376308, 536870929, 0, 1376309, 536870929, 0, 1376310, 536870929, 0, 1376311, 536870929, 0, 1376312, 536870929, 0, 1376313, 536870929, 0, 1376316, 17, 0, 1376320, 536870915, 0, 1441793, 536870929, 0, 1441817, 536870929, 0, 1441829, 536870929, 0, 1441832, 536870929, 0, 1441835, 536870929, 0, 1441836, 536870929, 0, 1441839, 536870929, 0, 1441840, 536870929, 0, 1441841, 536870929, 0, 1441842, 536870929, 0, 1441843, 536870929, 0, 1441844, 536870929, 0, 1441845, 536870929, 0, 1441846, 536870929, 0, 1441847, 536870929, 0, 1441848, 536870929, 0, 1507328, 17, 0, 1507329, 536870929, 0, 1507330, 536870929, 0, 1507331, 536870929, 0, 1507332, 536870929, 0, 1507333, 536870929, 0, 1507334, 536870929, 0, 1507335, 536870929, 0, 1507336, 536870929, 0, 1507337, 536870929, 0, 1507338, 536870929, 0, 1507339, 536870929, 0, 1507340, 536870929, 0, 1507341, 536870929, 0, 1507342, 536870929, 0, 1507343, 536870929, 0, 1507344, 536870929, 0, 1507345, 536870929, 0, 1507346, 536870929, 0, 1507347, 536870929, 0, 1507348, 536870929, 0, 1507349, 536870929, 0, 1507350, 536870929, 0, 1507351, 536870929, 0, 1507352, 536870929, 0, 1507353, 536870929, 0, 1507354, 536870929, 0, 1507355, 536870929, 0, 1507356, 536870929, 0, 1507357, 536870929, 0, 1507358, 536870929, 0, 1507359, 536870929, 0, 1507360, 536870929, 0, 1507361, 536870929, 0, 1507362, 536870929, 0, 1507363, 536870929, 0, 1507364, 536870929, 0, 1507365, 536870929, 0, 1507367, 536870929, 0, 1507368, 536870929, 0, 1507371, 536870929, 0, 1507372, 536870929, 0, 1507373, 536870929, 0, 1507374, 536870929, 0, 1507375, 536870929, 0, 1507376, 536870929, 0, 1507377, 536870929, 0, 1507388, 17, 0, 1507470, 0, 0, 1507474, 1, 0, 1507478, 1, 0, 1507482, 1, 0, 1507486, 1, 0, 1507490, 1, 0, 1507494, 1, 0, 1507498, 1, 0, 1507502, 1, 0, 1507506, 536870912, 0, 1572874, 536870929, 0, 1572875, 536870929, 0, 1572876, 536870929, 0, 1572877, 536870929, 0, 1572878, 536870929, 0, 1572879, 536870929, 0, 1572880, 536870929, 0, 1572881, 536870929, 0, 1572882, 536870929, 0, 1572883, 536870929, 0, 1572884, 536870929, 0, 1572885, 536870929, 0, 1572886, 536870929, 0, 1572887, 536870929, 0, 1572888, 536870929, 0, 1572889, 536870929, 0, 1572890, 536870929, 0, 1572891, 536870929, 0, 1572892, 536870929, 0, 1572893, 536870929, 0, 1572894, 536870929, 0, 1572895, 536870929, 0, 1572896, 536870929, 0, 1572897, 536870929, 0, 1572898, 536870929, 0, 1572899, 536870929, 0, 1572900, 536870929, 0, 1572901, 536870929, 0, 1572902, 536870929, 0, 1572903, 536870929, 0, 1572904, 536870929, 0, 1572905, 536870929, 0, 1572906, 536870929, 0, 1572907, 536870929, 0, 1572908, 536870929, 0, 1572909, 536870929, 0, 1572910, 536870929, 0, 1572911, 536870929, 0, 1572912, 536870929, 0, 1572913, 17, 0, 1572914, 17, 0, 1572915, 17, 0, 1572916, 17, 0, 1572917, 17, 0, 1572918, 17, 0, 1572919, 17, 0, 1572924, 17, 0, 1703932, 536870917, 0, 1638400, 17, 0, 1638404, 17, 0, 1638408, 17, 0, 1638412, 17, 0, 1638416, 17, 0, 1638417, 17, 0, 1638421, 17, 0, 1638422, 17, 0, 1638423, 17, 0, 1638424, 17, 0, 1638425, 17, 0, 1638426, 17, 0, 1638427, 17, 0, 1638428, 17, 0, 1638429, 17, 0, 1638430, 17, 0, 1638431, 17, 0, 1638432, 17, 0, 1638433, 17, 0, 1638434, 17, 0, 1638435, 17, 0, 1638436, 17, 0, 1638437, 17, 0, 1638438, 17, 0, 1638439, 17, 0, 1638440, 17, 0, 1638444, 17, 0, 1638445, 17, 0, 1638446, 17, 0, 1638447, 17, 0, 1638448, 17, 0, 1638449, 17, 0, 1638453, 17, 0, 1638454, 17, 0, 1638458, 17, 0, 1638460, 17, 0, 1638464, 536870915, 0, 1835004, 11, 0, 1769472, 17, 0, 1769476, 17, 0, 1769480, 17, 0, 1769484, 17, 0, 1769485, 17, 0, 1769486, 17, 0, 1769490, 17, 0, 1769493, 17, 0, 1769494, 17, 0, 1769498, 17, 0, 1769502, 17, 0, 1769506, 17, 0, 1769507, 17, 0, 1769508, 17, 0, 1769509, 17, 0, 1769510, 17, 0, 1769514, 17, 0, 1769515, 17, 0, 1769516, 17, 0, 1769517, 17, 0, 1769518, 17, 0, 1769519, 17, 0, 1769520, 17, 0, 1769521, 17, 0, 1769522, 17, 0, 1769523, 17, 0, 1769524, 17, 0, 1769525, 17, 0, 1769526, 17, 0, 1769527, 17, 0, 1769528, 17, 0, 1769529, 17, 0, 1769530, 17, 0, 1769531, 17, 0, 1769532, 17, 0, 1769536, 536870923, 0, 1769614, 536870924, 0, 1769618, 536870920, 0, 1769622, 536870920, 0, 1769626, 536870920, 0, 1769630, 536870920, 0, 1769634, 536870920, 0, 1769638, 536870920, 0, 1769642, 536870920, 0, 1769646, 536870920, 0, 1769650, 536870923, 0 )
+
+[node name="6" type="Sprite" parent="TileMap"]
+position = Vector2( 17.1843, 485.077 )
+scale = Vector2( 1, 2.74438 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[node name="7" type="Sprite" parent="TileMap"]
+position = Vector2( 337.711, 582.85 )
+scale = Vector2( 6.57872, 2.03675 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[node name="Inimigo" parent="." instance=ExtResource( 6 )]
+position = Vector2( 292.057, 249.095 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 1
+collision_layer = 4
+life = 7
+
+[node name="Inimigo2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1705.51, 508.863 )
+scale = Vector2( 0.15, 0.15 )
+z_index = 1
+collision_layer = 4
+life = 7
+
+[node name="Passagem" parent="." instance=ExtResource( 7 )]
+position = Vector2( 6213.16, -127.689 )
+script = null
+
+[node name="PlataformaGelo" type="Node" parent="."]
+
+[node name="plataforma_gelo" parent="PlataformaGelo" instance=ExtResource( 8 )]
+editor/display_folded = true
+position = Vector2( 3103.52, 264.173 )
+z_index = -1
+collision_layer = 2
+collision/safe_margin = 0.001
+
+[node name="anim" type="AnimationPlayer" parent="PlataformaGelo/plataforma_gelo"]
+autoplay = "default"
+playback_speed = 0.3
+anims/default = SubResource( 1 )
+
+[node name="MiniPlataforma" type="Node" parent="."]
+
+[node name="plataforma_gelo" parent="MiniPlataforma" instance=ExtResource( 9 )]
+position = Vector2( 4368.02, 202.286 )
+z_index = -1
+collision_layer = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MiniPlataforma"]
+autoplay = "miniplataforma"
+playback_speed = 0.3
+anims/miniplataforma = SubResource( 2 )
+
+[node name="Plataf_Gelo2" type="Node" parent="."]
+
+[node name="plataforma_gelo" parent="Plataf_Gelo2" instance=ExtResource( 10 )]
+position = Vector2( 5997.75, 741.344 )
+z_index = -1
+collision_layer = 2
+
+[node name="Anim2" type="AnimationPlayer" parent="Plataf_Gelo2/plataforma_gelo"]
+autoplay = "PlatFinal"
+playback_process_mode = 0
+playback_speed = 0.3
+anims/PlatFinal = SubResource( 3 )
+
+[node name="Objects" type="Node2D" parent="."]
+editor/display_folded = true
+z_index = -1
+
+[node name="Sign_2" type="Sprite" parent="Objects"]
+position = Vector2( 1187.28, 306.299 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 11 )
+
+[node name="Tree_2" type="Sprite" parent="Objects"]
+position = Vector2( 1560.32, 406.517 )
+z_index = -1
+texture = ExtResource( 12 )
+
+[node name="14" type="Sprite" parent="Objects"]
+position = Vector2( 759.934, 6.46617 )
+scale = Vector2( 0.630255, 0.630255 )
+texture = ExtResource( 13 )
+
+[node name="15" type="Sprite" parent="Objects"]
+position = Vector2( 839.934, 6.46617 )
+scale = Vector2( 0.630255, 0.630255 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Tree_1" type="Sprite" parent="Objects"]
+position = Vector2( 797.907, -92.1651 )
+scale = Vector2( 0.502161, 0.502161 )
+texture = ExtResource( 14 )
+
+[node name="morte" parent="." instance=ExtResource( 15 )]
+position = Vector2( 2843.64, -770.286 )
+[connection signal="body_entered" from="Passagem" to="." method="_on_Passagem_body_entered"]
+[connection signal="body_entered" from="morte" to="." method="_on_morte_body_entered"]

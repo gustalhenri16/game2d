@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets Maps/GramaSet/Tiles/1.png" type="Texture" id=1]
+[ext_resource path="res://Assets Maps/GramaSet/Tiles/2.png" type="Texture" id=2]
+[ext_resource path="res://Assets Maps/GramaSet/Tiles/3.png" type="Texture" id=3]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 75.3698, 38.6654 )
+
+[node name="plataforma_gelo" type="KinematicBody2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -38.4963 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
+scale = Vector2( 0.3, 0.6 )
+texture = ExtResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="Sprite"]
+position = Vector2( 128, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite4" type="Sprite" parent="Sprite"]
+position = Vector2( 254.667, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="Sprite"]
+position = Vector2( 381.667, 0 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 57, 0 )
+shape = SubResource( 1 )
